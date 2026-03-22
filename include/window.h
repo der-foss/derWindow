@@ -46,6 +46,10 @@ extern "C" {
 #define WGLESMINOR 2
 #endif
 
+#ifdef __AANDROIDD__
+#define WANDROID
+#endif
+
 struct window_t {
         EGLDisplay display;
         EGLSurface surface;

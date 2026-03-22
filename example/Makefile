@@ -26,12 +26,12 @@ ANDROID_SO = $(BUILD)/lib/$(ANDROID_ABI)/libexample.so
 ifeq ($(ANDROID), 1)
 	CC = $(ANDROID_NDK)/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android$(ANDROID_API)-clang
 	CFLAGS = -I$(INCLUDE) -I$(ANDROID_NDK)/sources/android/native_app_glue -fPIC
-	LIBS   = -shared -landroid -llog -lEGL -lGLESv3 ../build/arm64-v8a/libw.a
+	LIBS   = -shared -landroid -llog -lEGL -lGLESv3 ../build/arm64-v8a/libderWindow.a
 	TARGET = $(BUILD)/signed.apk
 else
 	CC = gcc
 	CFLAGS = -I$(INCLUDE)
-	LIBS   = ../build/libw.a -lEGL -lGL -lX11 -g -fsanitize=address
+	LIBS   = ../build/libderWindow.a -lEGL -lGL -lX11 -g -fsanitize=address
 	TARGET = $(BUILD)/example
 endif
 

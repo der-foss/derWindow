@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(w)
+project(derWindow)
 
 set(CMAKE_C_STANDARD 99)
 
 set(SOURCES
   src/window.c)
 
-add_library(w
+add_library(derWindow
   STATIC
   ${SOURCES})
 
@@ -24,19 +24,19 @@ if(WANDROID)
     PUBLIC
     ${ANDROID_NDK}/sources/android/native_app_glue)
 
-  target_link_libraries(w
+  target_link_libraries(derWindow
     PRIVATE
     android
     ${log-lib}
     native_app_glue
     GLESv3)
 
-  target_compile_definitions(w
+  target_compile_definitions(derWindow
     PRIVATE
-    WANDROID)
+    __AANDROIDD__)
 endif()
 
-target_compile_options(w
+target_compile_options(derWindow
   PRIVATE
   -Wall
   -Werror
@@ -44,10 +44,10 @@ target_compile_options(w
   -pedantic
   -pedantic-errors)
 
-target_include_directories(w
+target_include_directories(derWindow
   PUBLIC
   include/)
 
-target_link_libraries(w
+target_link_libraries(derWindow
   PRIVATE
   EGL)

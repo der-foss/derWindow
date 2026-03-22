@@ -1,8 +1,8 @@
-# LibW
-  LibW - A simple, lightweight, and fast-to-use window library.
+# derWindow
+  derWindow - A simple, lightweight, and fast-to-use window library.
 
 # Usage
-  LibW works with callback functions, so we have `on_init`, `on_update`, `on_destroy`:
+  derWindow works with callback functions, so we have `on_init`, `on_update`, `on_destroy`:
   
   ```c
   #include <window.h>
@@ -26,8 +26,8 @@
   ```
 
 # More About the API
-  LibW aim is just to provide the Window layer, so there's not additional features.  
-  On the other hand, LibW already initializes an OpenGL(ES) context, ES for Android.  
+  derWindow aim is just to provide the Window layer, so there's not additional features.  
+  On the other hand, derWindow already initializes an OpenGL(ES) context, ES for Android.  
   it uses OpenGL(ES) 3.2 by the default  
   you can change it by redefining the following macros before include window.h:  
     - `WGLMAJOR`:   3  
@@ -35,4 +35,4 @@
     - `WGLESMAJOR`: 3  
     - `WGLESMINOR`: 2  
 
-  `NOTE`: LibW doesn't load OpenGL Functions for the version, so if you want use any version after GL 1.0 you should use GLAD.
+  `NOTE`: derWindow doesn't load OpenGL Functions for the version, so if you want use any version after GL 1.0 you should use GLAD.
